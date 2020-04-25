@@ -42,3 +42,39 @@ console.log(tutorial.SomeObject)
 
 console.log('Hello World from NodeJS');
 ```
+
+## The Events Module and EventEmitter Class
+
+The events module allows us to bring event driven programming to NodeJS.
+
+We can import the EventEmitter constructor using `require('events')`.
+
+We can instantiate an object, then use the `on` function to create an event, and the `emit` function to call the event.
+```js
+const EventEmitter = require('events');
+const eventEmitter = new EventEmitter();
+eventEmitter.on('tutorial', (x) => {
+    console.log('tutorial event has occurred: ' + x);
+})
+eventEmitter.emit('tutorial', 42);
+```
+
+What we can do is create a class which extends from the `EventEmitter` class.
+```js
+class Person extends EventEmitter{
+    constructor(name){
+        super(name);
+        this._name = name;
+    }
+    get name(){
+        return this._name;
+    }
+}
+let pedro = new Person('Pedro');
+pedro.on('name', ()=>{
+    console.log('My name is ' + pedro.name);
+});
+pedro.emit('name');
+````
+
+Note that events are synchonous.
