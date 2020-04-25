@@ -35,7 +35,7 @@ pedro.emit('name');
 */
 
 // 3. Working with the ReadLine module
-
+/*
 const readline = require('readline');
 const rl = readline.createInterface({input : process.stdin, 
                                     output : process.stdout});
@@ -62,3 +62,28 @@ rl.question(`What is ${ num1 } plus ${ num2 }?\n`, (userInput)=>{
 });
 // Note: rl is an EventEmitter and close() also calls the close event
 // Note: use rl.on('line') to continue running until user enters correctly (on newline)
+*/
+
+// 4. Working with the File System Module
+
+const fs = require('fs');
+fs.writeFile('example.txt', 'this is an example', (err)=>{
+    if(err) console.log(err)
+    else console.log('File Sucessfully created')
+});
+fs.readFile('example.txt', encoding='utf-8', (err, file)=>{
+    if(err) console.log(err);
+    else console.log('Content:' + file);
+});
+fs.rename('example.txt', 'example2.txt', (err)=>{
+    if(err) console.log(err)
+    else console.log('Successfully renamed the file')
+});
+fs.appendFile('example2.txt', '\nsome data being appended.', (err)=>{
+    if(err) console.log(err)
+    else console.log('Successfully appended data to the file')
+});
+fs.unlink('example2.txt', (err)=>{  // delete
+    if(err) console.log(err)
+    else console.log('Successfully deleted the file')
+});

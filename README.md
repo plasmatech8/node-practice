@@ -81,11 +81,12 @@ Note that events are synchonous.
 
 ## 3. Working with the ReadLine module
 
-Used for user input.
-
-`process` is a global object provided by default by Node.
+Used for user input. 
 
 We use the `readline` module to do user input and cycle until the user inputs a correct response.
+
+Note that `process` is a global object provided by default by Node.
+
 ```js
 const readline = require('readline');
 const rl = readline.createInterface({input : process.stdin, 
@@ -113,4 +114,34 @@ rl.question(`What is ${ num1 } plus ${ num2 }?\n`, (userInput)=>{
 }); 
 // Note: rl is an EventEmitter and close() also calls the close event
 // Note: use rl.on('line') to continue running until user enters correctly (on newline)
+```
+
+## Working with the File System Module
+
+We can use `const fs = require('fs');` to work with the filesystem.
+
+Note that if we do not include encoding, we will be given a buffer stream object instead of the contents of the file.
+
+```js
+const fs = require('fs');
+fs.writeFile('example.txt', 'this is an example', (err)=>{
+    if(err) console.log(err)
+    else console.log('File Sucessfully created')
+});
+fs.readFile('example.txt', encoding='utf-8', (err, file)=>{
+    if(err) console.log(err);
+    else console.log('Content:' + file);
+});
+fs.rename('example.txt', 'example2.txt', (err)=>{
+    if(err) console.log(err)
+    else console.log('Successfully renamed the file')
+});
+fs.appendFile('example2.txt', '\nsome data being appended.', (err)=>{
+    if(err) console.log(err)
+    else console.log('Successfully appended data to the file')
+});
+fs.unlink('example2.txt', (err)=>{  // delete
+    if(err) console.log(err)
+    else console.log('Successfully deleted the file')
+});
 ```
