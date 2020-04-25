@@ -65,7 +65,7 @@ rl.question(`What is ${ num1 } plus ${ num2 }?\n`, (userInput)=>{
 */
 
 // 4. Working with the File System Module
-
+/*
 const fs = require('fs');
 fs.writeFile('example.txt', 'this is an example', (err)=>{
     if(err) console.log(err)
@@ -86,4 +86,36 @@ fs.appendFile('example2.txt', '\nsome data being appended.', (err)=>{
 fs.unlink('example2.txt', (err)=>{  // delete
     if(err) console.log(err)
     else console.log('Successfully deleted the file')
+});
+*/
+
+// 5. Working with the File System Module, pt. 2 (folders)
+
+const fs = require('fs');
+fs.mkdir('tutorial_dir', (err)=>{
+    if(err) console.log(err)
+    else console.log('Folder Sucessfully created')
+});
+fs.rmdir('tutorial_dir', (err)=>{ // only works on empty folders
+    if(err) console.log(err)
+    else console.log('Folder Sucessfully deleted')
+});
+
+fs.mkdir('tutorial_dir', ()=>{});
+fs.writeFile('tutorial_dir/example1.txt', 'something', ()=>{})
+fs.writeFile('tutorial_dir/example2.txt', 'something', ()=>{})
+fs.readdir('tutorial_dir', (err, files)=>{ // How to delete non-empty folder
+    if(err) console.log(err)
+    else {
+        for(let file of files){
+            fs.unlink('tutorial_dir/' + file, (err)=>{  // delete
+                if(err) console.log(err)
+                else console.log('Successfully deleted a file')
+            });
+        }
+        fs.rmdir('tutorial_dir', (err)=>{
+            if(err) console.log(err)
+            else console.log('Folder Sucessfully deleted')
+        });
+    }
 });
