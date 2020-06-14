@@ -115,3 +115,8 @@ We can uninstall lodash using: `npm uninstall lodash`
 
 See https://www.npmjs.com/ for available npm packages.
 
+The `^` carat symbol means that we are willing to use packages that are updated at the minor and patch level, but not major level (4.x.x).
+
+The `~` tilde symbol means we only want to update patches.
+
+No prefix means that we only want the specific version.
