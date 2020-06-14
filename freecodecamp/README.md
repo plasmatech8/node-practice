@@ -8,8 +8,6 @@ Install NodeJS (Linux): `sudo apt install nodejs`
 
 Run a JavaScript module using node: `node app.js`
 
-Install npm (Linux): `sudo apt install npm`
-
 ## Contents
 
 - [FreeCodeCamp NodeJS Tutorial](#freecodecamp-nodejs-tutorial)
@@ -23,6 +21,8 @@ Install npm (Linux): `sudo apt install npm`
   - [06. Working with Readable And Writable Streams](#06-working-with-readable-and-writable-streams)
   - [07. HTTP Server](#07-http-server)
   - [08. NPM Packages](#08-npm-packages)
+  - [09. Express Server Basics](#09-express-server-basics)
+  - [08. Express Static File Server](#08-express-static-file-server)
 
 ## 01. Working with Modules
 
@@ -98,6 +98,8 @@ We can use piping to make it more efficient and can also serve other static file
 
 ## 08. NPM Packages
 
+Install npm (Linux): `sudo apt install npm`
+
 Create `package.json` file: `npm init`
 
 Now we can install npm packages into our project. i.e. `npm install lodash`
@@ -105,11 +107,8 @@ Now we can install npm packages into our project. i.e. `npm install lodash`
 Dependency are installed into the `node_modules` directory.
 
 We can now import the npm module and test that it works in our `app.js`:
-```js
-const lodash = require('lodash')
-let example = lodash.fill([1, 2, 3, 4, 5], "banana", 1, 4)
-console.log(example)
-```
+
+* [app_08_npm.js](app_08_npm.js)
 
 We can uninstall lodash using: `npm uninstall lodash`
 
@@ -120,3 +119,13 @@ The `^` carat symbol means that we are willing to use packages that are updated 
 The `~` tilde symbol means we only want to update patches.
 
 No prefix means that we only want the specific version.
+
+## 09. Express Server Basics
+
+Express is a way to create a proper HTTP server with much less code.
+
+Install express: `npm install express`
+
+We can have dynamic route parameters, query strings, etc.
+
+## 08. Express Static File Server
