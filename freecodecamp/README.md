@@ -140,7 +140,11 @@ We can add `static/index.html` under the `/` resource.
 
 We can also serve the whole `static/` directory under `public/index.html`.
 
-**Form Handling**
+**POST Request + JSON Handling**
 
 We can allow for form handling using the `bodyparser` module.
+
+**Form Validation**
+
+We can do form validation using the `joi` module.
 
