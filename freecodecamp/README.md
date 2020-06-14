@@ -1,4 +1,4 @@
-# node-practice
+# FreeCodeCamp NodeJS Tutorial
 
 FreeCodeCamp tutorial: https://www.youtube.com/watch?v=RLtyhwFtXQA
 
@@ -7,6 +7,22 @@ FreeCodeCamp tutorial: https://www.youtube.com/watch?v=RLtyhwFtXQA
 Install NodeJS (Linux): `sudo apt install nodejs`
 
 Run a JavaScript module using node: `node app.js`
+
+Install npm (Linux): `sudo apt install npm`
+
+## Contents
+
+- [FreeCodeCamp NodeJS Tutorial](#freecodecamp-nodejs-tutorial)
+  - [Getting Started](#getting-started)
+  - [Contents](#contents)
+  - [01. Working with Modules](#01-working-with-modules)
+  - [02. The Events Module and EventEmitter Class](#02-the-events-module-and-eventemitter-class)
+  - [03. Working with the ReadLine module](#03-working-with-the-readline-module)
+  - [04. Working with the File System Module](#04-working-with-the-file-system-module)
+  - [05. Working with the File System Module, pt 2 (folders)](#05-working-with-the-file-system-module-pt-2-folders)
+  - [06. Working with Readable And Writable Streams](#06-working-with-readable-and-writable-streams)
+  - [07. HTTP Server](#07-http-server)
+  - [08. NPM Packages](#08-npm-packages)
 
 ## 01. Working with Modules
 
@@ -36,7 +52,6 @@ Note that events are synchonous.
 
 * [app_02_events.js](app_02_events.js)
 
-
 ## 03. Working with the ReadLine module
 
 Used for user input.
@@ -54,7 +69,6 @@ We can use `const fs = require('fs');` to work with the filesystem.
 Note that if we do not include encoding, we will be given a buffer stream object instead of the contents of the file.
 
 * [app_04_filesystem_files.js](app_04_filesystem_files.js)
-
 
 ## 05. Working with the File System Module, pt 2 (folders)
 
@@ -81,3 +95,23 @@ We can use the HTTP library to make a simple server.
 We can use piping to make it more efficient and can also serve other static files like images.
 
 * [app_07_http.js](app_07_http.js)
+
+## 08. NPM Packages
+
+Create `package.json` file: `npm init`
+
+Now we can install npm packages into our project. i.e. `npm install lodash`
+
+Dependency are installed into the `node_modules` directory.
+
+We can now import the npm module and test that it works in our `app.js`:
+```js
+const lodash = require('lodash')
+let example = lodash.fill([1, 2, 3, 4, 5], "banana", 1, 4)
+console.log(example)
+```
+
+We can uninstall lodash using: `npm uninstall lodash`
+
+See https://www.npmjs.com/ for available npm packages.
+
