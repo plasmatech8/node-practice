@@ -74,5 +74,10 @@ Pipe Chaining can be used to create a pipe where we zip the file contents before
 
 * [app_06_streams.js](app_06_streams.js)
 
-## 07.
+## 07. HTTP Server
 
+We can use the HTTP library to make a simple server.
+
+We can use piping to make it more efficient and can also serve other static files like images.
+
+* [app_07_http.js](app_07_http.js)
