@@ -22,7 +22,7 @@ Run a JavaScript module using node: `node app.js`
   - [07. HTTP Server](#07-http-server)
   - [08. NPM Packages](#08-npm-packages)
   - [09. Express Server Basics](#09-express-server-basics)
-  - [08. Express Static File Server](#08-express-static-file-server)
+  - [10. Express Static File Server](#10-express-static-file-server)
 
 ## 01. Working with Modules
 
@@ -128,4 +128,12 @@ Install express: `npm install express`
 
 We can have dynamic route parameters, query strings, etc.
 
-## 08. Express Static File Server
+* [app_09_express_basics.js](app_09_express_basics.js)
+
+## 10. Express Static File Server
+
+We can add `static/index.html` under the `/` resource.
+
+We can also serve the whole `static/` directory under `public/index.html`.
+
+* [app_10_express_static.js](app_10_express_static.js)
