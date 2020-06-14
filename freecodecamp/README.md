@@ -64,4 +64,15 @@ We can create/delete folders and delete non-empty folders by first listing & del
 
 ## 06. Working with Readable And Writable Streams
 
+A stream is more efficient way to transfer data.
+
+We should use streams when we want to transfer data from a really large file to another place. (Do not use fs.readFile or else it will use up all of your RAM).
+
+Pipes can be used as a short-hand method to do this.
+
+Pipe Chaining can be used to create a pipe where we zip the file contents before piping into the next step.
+
 * [app_06_streams.js](app_06_streams.js)
+
+## 07.
+
